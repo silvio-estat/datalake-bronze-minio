@@ -1,0 +1,22 @@
+{
+  "name": "Data Engineering - MinIO Project",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker", 
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+
+  // Importante: Encaminha as portas do MinIO para seu localhost
+  "forwardPorts": [9000, 9001],
+
+  // Importante: Define que usaremos o usuário 'vscode' (não-root)
+  "remoteUser": "vscode"
+}

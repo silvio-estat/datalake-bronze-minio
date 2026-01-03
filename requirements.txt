@@ -1,0 +1,5 @@
+minio
+boto3
+pandas
+duckdb
+pyarrow

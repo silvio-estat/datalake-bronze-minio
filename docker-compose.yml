@@ -1,0 +1,30 @@
+
+services:
+  # 1. Seu ambiente de trabalho (Python/Data Science)
+  workspace:
+    build: 
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity
+    # Importante: Permite que este container veja o MinIO na rede interna
+    depends_on:
+      - minio
+
+  # 2. O serviço MinIO (Armazenamento Bronze)
+  minio:
+    image: minio/minio:latest
+    container_name: minio_bronze
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000" # Porta da API (para scripts)
+      - "9001:9001" # Porta do Console (interface web)
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=brasil123
+    volumes:
+      - minio_data:/data
+
+volumes:
+  minio_data:

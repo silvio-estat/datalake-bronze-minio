@@ -1,0 +1,19 @@
+# Ignorar arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Ignorar ambientes virtuais locais (caso existam)
+.venv/
+venv/
+
+# Ignorar dados locais do MinIO (se você mapeou para uma pasta local)
+minio_data/
+
+# Ignorar arquivos de sistema
+.DS_Store
+
+# Ignorar credenciais e senhas (Segurança!)
+.env
+
+# (Opcional) Ignorar os PDFs de teste se forem muito grandes/sigilosos
+#meus_pdfs/
