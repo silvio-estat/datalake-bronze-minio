@@ -3,3 +3,6 @@ boto3
 pandas
 duckdb
 pyarrow
+docling
+onnxruntime
+tesserocr
