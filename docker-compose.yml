@@ -14,7 +14,7 @@ services:
 
   # 2. O serviço MinIO (Armazenamento Bronze)
   minio:
-    image: minio/minio:latest
+    image: minio/minio:v1_silvio
     container_name: minio_bronze
     command: server /data --console-address ":9001"
     ports:
